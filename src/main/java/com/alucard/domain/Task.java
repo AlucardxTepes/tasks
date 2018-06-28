@@ -10,6 +10,7 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Nelson Pantaleon on 6/28/2018
@@ -17,6 +18,7 @@ import lombok.Data;
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Task {
 
   @Id

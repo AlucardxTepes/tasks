@@ -4,6 +4,8 @@ import com.alucard.domain.Task;
 import com.alucard.service.TaskService;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +22,14 @@ public class TaskController {
     this.taskService = taskService;
   }
 
-  @GetMapping( value = {"", "/"})
+  @GetMapping(value = {"", "/"})
   public Iterable<Task> listTasks() {
     return this.taskService.list();
+  }
+
+  @PostMapping("/save")
+  public Task saveTask(@RequestBody Task task) {
+    return this.taskService.save(task);
   }
 
 }
